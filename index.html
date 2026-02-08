@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Lesson Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 My Lesson Planner</h1>
+            <p class="subtitle">Organize your lessons by date, class, and topic</p>
+        </header>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="week-nav">
+                <button id="prevWeek" class="btn-nav">← Previous Week</button>
+                <span id="weekDisplay" class="week-label">This Week</span>
+                <button id="nextWeek" class="btn-nav">Next Week →</button>
+            </div>
+            
+            <div class="search-filter">
+                <input type="text" id="searchBox" placeholder="Search by topic or class..." class="search-input">
+                <div class="tag-filters">
+                    <button class="tag-btn active" data-tag="all">All</button>
+                    <button class="tag-btn" data-tag="Homework">Homework</button>
+                    <button class="tag-btn" data-tag="Test">Test</button>
+                    <button class="tag-btn" data-tag="Revision">Revision</button>
+                    <button class="tag-btn" data-tag="Other">Other</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lessons Display -->
+        <div id="lessonsContainer" class="lessons-container">
+            <!-- Lessons will be dynamically inserted here -->
+        </div>
+
+        <!-- Add Lesson Form -->
+        <div class="add-lesson-card">
+            <h2>➕ Add New Lesson</h2>
+            <form id="lessonForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lessonDate">Date</label>
+                        <input type="date" id="lessonDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lessonClass">Class</label>
+                        <input type="text" id="lessonClass" placeholder="e.g., Grade 6A" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lessonTopic">Topic</label>
+                        <input type="text" id="lessonTopic" placeholder="e.g., Fractions" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lessonTag">Tag</label>
+                        <select id="lessonTag" required>
+                            <option value="Homework">Homework</option>
+                            <option value="Test">Test</option>
+                            <option value="Revision">Revision</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lessonNotes">Notes</label>
+                    <textarea id="lessonNotes" placeholder="Add any additional notes..." rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-add">Add Lesson</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
